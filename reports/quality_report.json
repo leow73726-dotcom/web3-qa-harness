@@ -1,0 +1,594 @@
+{
+  "generated_at": "2026-11-15T11:40:34+00:00",
+  "runs": 3,
+  "cases": [
+    {
+      "case_id": "TestQueryApi::test_get_nonce_increments_after_transaction",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0313,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestQueryApi::test_get_storage_at_reads_counter_slot",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0503,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestQueryApi::test_get_storage_at_requires_hex_slot",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.031,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestQueryApi::test_get_logs_filters_by_address",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0543,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestQueryApi::test_get_fee_history_returns_series",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.03,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestQueryApi::test_time_travel_shifts_block_timestamp",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0153,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestChainLifecycle::test_reset_to_genesis_clears_state",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0347,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestChainLifecycle::test_disable_then_enable_auto_mine",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0503,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestFilters::test_block_filter_tracks_new_blocks",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0237,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestFilters::test_delete_filter_makes_it_unusable",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.014,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAutoMineDisabled::test_send_does_not_advance_block",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0327,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAutoMineDisabled::test_balance_unchanged_until_mined",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.03,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAutoMineDisabled::test_receipt_is_unavailable_before_mining",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0293,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAutoMineDisabled::test_mine_blocks_applies_pending_and_advances",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.046,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMockBackend::test_accounts_and_balances_are_available",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0017,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMockBackend::test_call_is_not_implemented",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.001,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMockBackend::test_contract_deployment_yields_no_address",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.002,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMockBackend::test_get_code_returns_empty",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.001,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAccounts::test_chain_exposes_ten_prefunded_accounts",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.013,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAccounts::test_every_account_starts_with_the_same_balance",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.015,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAccounts::test_accounts_are_valid_hex_addresses",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0133,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestNativeTransfer::test_native_transfer_updates_receiver_balance",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0263,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestNativeTransfer::test_sender_is_charged_value_plus_gas",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0323,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestNativeTransfer::test_transfer_larger_than_balance_is_rejected",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.023,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestNativeTransfer::test_backend_validation_error_type_differs_from_public_exception",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0317,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestNativeTransfer::test_transfer_to_zero_address_is_allowed_by_the_evm",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0337,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestContract::test_minimal_contract_returns_42",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0337,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestContract::test_deployed_code_is_stored_on_chain",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0313,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestContract::test_contract_call_does_not_mine_a_block",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0337,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransactionReceipt::test_receipt_has_required_fields",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0303,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransactionReceipt::test_eip1559_transaction_is_typed_0x2",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0297,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransactionReceipt::test_gas_estimate_for_plain_transfer_is_21000",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0137,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestSnapshotIsolation::test_snapshot_revert_restores_balance",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.025,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestSnapshotIsolation::test_revert_also_rolls_back_contract_deployment",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0303,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestThrowsContract::test_initial_value_is_one",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.031,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestThrowsContract::test_set_value_persists",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0493,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestThrowsContract::test_will_throw_yields_failed_receipt_instead_of_exception",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.046,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestThrowsContract::test_failed_call_does_not_change_stored_state",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0663,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestThrowsContract::test_revert_contract_covers_both_branches",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0683,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMathContract::test_counter_starts_at_zero",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.033,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMathContract::test_increment_is_monotonic",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.1043,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMathContract::test_return13_is_stable_across_calls",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.033,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMathContract::test_add_returns_sum[3-4-7]",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0363,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMathContract::test_add_returns_sum[0-0-0]",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0333,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMathContract::test_add_returns_sum[1000000000000000000-1-1000000000000000001]",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.033,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMathContract::test_multiply7",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0317,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestEmitterContract::test_no_argument_event",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0487,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestEmitterContract::test_single_arg_event_payload",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.048,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestEmitterContract::test_double_arg_event_payload",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.047,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestEmitterContract::test_indexed_argument_lands_in_topics",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0463,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestEmitterContract::test_successful_call_without_events_has_no_logs",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0477,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestGasBurnerContract::test_gas_used_grows_with_block_number",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.1113,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestGasBurnerContract::test_gas_estimate_tracks_block_number",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.256,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMetadataAndInitialAllocation::test_metadata",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0417,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMetadataAndInitialAllocation::test_total_supply_is_fixed_at_deploy",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0363,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestMetadataAndInitialAllocation::test_deployer_holds_the_entire_supply",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.058,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransfer::test_transfer_moves_value",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.063,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransfer::test_transfer_emits_transfer_event_with_decoded_args",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.054,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransfer::test_transfer_returns_true",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0377,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransfer::test_self_transfer_keeps_balance_and_emits",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0593,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransfer::test_zero_value_transfer_is_allowed_and_emits",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0563,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransfer::test_transfer_to_zero_address_is_allowed_by_the_contract",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.054,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestTransfer::test_transfer_more_than_balance_reverts_with_custom_error",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0373,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestApproval::test_approve_sets_allowance_and_emits",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0543,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestApproval::test_approve_overwrites_previous_allowance",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0693,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestApproval::test_transfer_from_consumes_allowance",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0713,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestApproval::test_transfer_from_beyond_allowance_reverts",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.055,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestApproval::test_transfer_from_without_approval_reverts",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0397,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestApproval::test_infinite_allowance_is_not_decremented",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0723,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestInvariants::test_total_supply_never_changes",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.089,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestInvariants::test_sum_of_balances_always_equals_total_supply",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 1.622,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestInvariants::test_allowance_never_exceeds_what_was_approved",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 1.1247,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestConservationLaw::test_total_balance_only_drops_by_gas",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 1.4823,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestConservationLaw::test_self_transfer_costs_only_gas",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.659,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestFailureAccounting::test_revert_burns_gas_but_transfers_nothing",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.055,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestFailureAccounting::test_validation_failure_has_zero_side_effects",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.2547,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestNonceAndReadOnly::test_nonce_is_monotonic",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 1.125,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestNonceAndReadOnly::test_call_has_no_side_effects",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0507,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestSnapshotIdempotence::test_revert_is_idempotent",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.1107,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAbsoluteValues::test_genesis_balance_is_exactly_one_million_ether",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.021,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestAbsoluteValues::test_gas_price_of_a_plain_transfer_is_positive",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0363,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestReceiptContract::test_receipt_type_is_present_on_the_receipt",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0323,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestFeeHistoryWindow::test_fee_history_returns_requested_window_size",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0167,
+      "failure_messages": []
+    },
+    {
+      "case_id": "TestStorageSlotSemantics::test_get_storage_at_distinguishes_slots",
+      "verdict": "stable-pass",
+      "pass_rate": 1.0,
+      "mean_duration": 0.0513,
+      "failure_messages": []
+    }
+  ]
+}

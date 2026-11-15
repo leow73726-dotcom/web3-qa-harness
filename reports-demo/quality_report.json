@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-11-15T11:40:43+00:00",
+  "runs": 3,
+  "cases": [
+    {
+      "case_id": "test_doc_style::test_doc_style_validation_error_is_caught",
+      "verdict": "stable-fail",
+      "pass_rate": 0.0,
+      "mean_duration": 0.029,
+      "failure_messages": [
+        "eth_utils.exceptions.ValidationError: Sender does not have enough balance to cover transaction value and gas  (has 1000000000000000000000000, needs 2000000000021000000000000)",
+        "eth_utils.exceptions.ValidationError: Sender does not have enough balance to cover transaction value and gas  (has 1000000000000000000000000, needs 2000000000021000000000000)",
+        "eth_utils.exceptions.ValidationError: Sender does not have enough balance to cover transaction value and gas  (has 1000000000000000000000000, needs 2000000000021000000000000)"
+      ]
+    }
+  ]
+}

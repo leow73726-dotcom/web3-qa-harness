@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eth-qa"
+version = "0.1.0"
+description = "pytest-based regression harness for eth-tester: fixtures, contract handles, invariants, mutation testing and a CI quality gate."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["ethereum", "web3", "pytest", "testing", "mutation-testing", "property-based-testing"]
+
+dependencies = [
+    # 锁定到实测通过的版本，保证 bytecode / 行为可复现
+    "eth-tester==0.14.0b1",
+    "py-evm==0.12.1b1",
+    "eth-hash[pycryptodome]==0.8.0",
+    "pytest>=8",
+    "hypothesis>=6",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.6"]
+
+[tool.setuptools]
+packages = ["eth_qa"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

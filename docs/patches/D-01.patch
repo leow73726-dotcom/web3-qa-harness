@@ -1,0 +1,57 @@
+﻿diff --git a/eth_tester/exceptions.py b/eth_tester/exceptions.py
+index 5825880..357a9b1 100644
+--- a/eth_tester/exceptions.py
++++ b/eth_tester/exceptions.py
+@@ -1,5 +1,6 @@
+-class ValidationError(Exception):
+-    pass
++from eth_utils.exceptions import (  # noqa: F401  (re-exported public name)
++    ValidationError,
++)
+ 
+ 
+ class BlockNotFound(Exception):
+diff --git a/tests/core/validation/test_validation_error_type.py b/tests/core/validation/test_validation_error_type.py
+new file mode 100644
+index 0000000..fe8042a
+--- /dev/null
++++ b/tests/core/validation/test_validation_error_type.py
+@@ -0,0 +1,38 @@
++import pytest
++
++from eth_tester import EthereumTester
++from eth_tester.backends import is_supported_pyevm_version_available
++from eth_tester.exceptions import ValidationError as EthTesterValidationError
++from eth_utils.exceptions import ValidationError as EthUtilsValidationError
++
++
++def _make_overspend_tester():
++    if not is_supported_pyevm_version_available():
++        pytest.skip("py-evm backend not installed")
++    tester = EthereumTester()
++    account = tester.get_accounts()[0]
++    return tester, account, tester.get_balance(account)
++
++
++def test_public_validation_error_matches_eth_utils():
++    """公开的 ValidationError 必须就是 eth_utils 的那个类。
++
++    否则「eth-tester 自己抛的」和「py-evm 后端抛的」会变成两个同名但互不继承的
++    类型，调用方按文档写的 except / pytest.raises 会漏捕后端错误。
++    """
++    assert EthTesterValidationError is EthUtilsValidationError
++
++
++def test_overspend_is_catchable_with_public_exception():
++    """余额不足的错误必须能被 eth_tester.exceptions.ValidationError 捕获。"""
++    tester, account, balance = _make_overspend_tester()
++
++    with pytest.raises(EthTesterValidationError):
++        tester.send_transaction(
++            {
++                "from": account,
++                "to": tester.get_accounts()[1],
++                "value": balance * 2,
++                "gas": 21000,
++            }
++        )

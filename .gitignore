@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# 测试与工具产物
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+**/junit-run*.xml
+
+# 临时文件
+/tmp*
+*.log
+
+# 本地编译器等大文件
+/tools/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
