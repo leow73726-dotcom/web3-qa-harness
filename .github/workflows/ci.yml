@@ -5,9 +5,16 @@ on:
     branches: [main]
   pull_request:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  quality:
+  # 主门禁：套件 + 覆盖 + 质量门禁 + 门禁自检。这四项任何一项红，就不该合入。
+  tests:
+    name: suite + quality gate
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -22,17 +29,14 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e .
 
-      - name: Regression suite (84 cases)
-        run: python -m pytest
+      - name: Regression suite
+        run: python -m pytest -q
 
       - name: Public API surface coverage
         run: python -m eth_qa.api_coverage --tests tests --out reports
 
       - name: Quality gate (3 rounds, blocks on stable-fail)
         run: python -m eth_qa.quality --tests tests --runs 3 --out reports
-
-      - name: Mutation testing (17 mutants)
-        run: python -m eth_qa.mutation --tests tests --out reports
 
       # 门禁自检：反例套件必须被判红。若它反而通过，说明门禁失效。
       - name: Gate must block the negative demo
@@ -52,4 +56,51 @@ jobs:
           path: |
             reports/
             reports-demo/
+          if-no-files-found: warn
+
+  # 变异测试单独成 job：它要起 17 个子进程，慢且对环境敏感。
+  # 独立出来可以让失败原因一眼可辨，不跟主套件混在一起。
+  mutation:
+    name: mutation testing
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+
+      - name: Mutation testing (17 mutants)
+        run: python -m eth_qa.mutation --tests tests --out reports
+
+      - name: Show score
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p = pathlib.Path("reports/mutation_report.json")
+          if not p.exists():
+              print("no report produced")
+              raise SystemExit(0)
+          d = json.loads(p.read_text(encoding="utf-8"))
+          print(f"mutation score: {d['mutation_score_pct']}% ({d['killed']}/{d['total']})")
+          for m in d["mutants"]:
+              if not m["killed"]:
+                  print(f"  SURVIVED: {m['name']}")
+          PY
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mutation-report
+          path: reports/MUTATION_REPORT.md
           if-no-files-found: warn
