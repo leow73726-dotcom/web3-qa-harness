@@ -14,6 +14,11 @@ env/
 .hypothesis/
 **/junit-run*.xml
 
+# pip 中断残留
+/pip-build-*
+/pip-install-*
+/pip-unpack-*
+
 # 临时文件
 /tmp*
 *.log
