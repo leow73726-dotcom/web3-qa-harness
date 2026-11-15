@@ -1,6 +1,6 @@
 # Web3 链上回归 · 质量门禁报告
 
-- 生成时间（UTC）：2026-11-15T11:40:43+00:00
+- 生成时间（UTC）：2026-11-15T14:11:21+00:00
 - 执行轮次：3
 - 用例总数：1
 - 稳定通过：0
@@ -19,7 +19,7 @@
 
 | 用例 | 结论 | 通过率 | 平均耗时(s) |
 | --- | --- | --- | --- |
-| `test_doc_style::test_doc_style_validation_error_is_caught` | stable-fail | 0/3 (0%) | 0.029 |
+| `test_doc_style::test_doc_style_validation_error_is_caught` | stable-fail | 0/3 (0%) | 0.032 |
 
 ## 失败证据
 

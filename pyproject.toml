@@ -28,7 +28,8 @@ packages = ["eth_qa"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-q --strict-markers"
+# 不加 -q：让 `pytest` 和 `pytest -v` 都能正常显示用例名
+addopts = "--strict-markers"
 filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.ruff]

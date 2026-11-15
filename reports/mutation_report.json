@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T11:42:28+00:00",
+  "generated_at": "2026-11-15T14:11:55+00:00",
   "total": 17,
   "killed": 17,
   "survived": 0,
@@ -10,7 +10,7 @@
       "kind": "python",
       "description": "get_balance 多返回 1 wei",
       "killed": true,
-      "seconds": 12.29,
+      "seconds": 14.51,
       "hitting_test": "FAILED tests/test_mutation_hardening.py::TestAbsoluteValues::test_genesis_balance_is_exactly_one_million_ether"
     },
     {
@@ -18,7 +18,7 @@
       "kind": "python",
       "description": "交易金额被抹成 0",
       "killed": true,
-      "seconds": 3.11,
+      "seconds": 3.51,
       "hitting_test": "FAILED tests/test_api_surface.py::TestChainLifecycle::test_reset_to_genesis_clears_state"
     },
     {
@@ -26,7 +26,7 @@
       "kind": "python",
       "description": "失败交易也报 status=1",
       "killed": true,
-      "seconds": 3.28,
+      "seconds": 3.66,
       "hitting_test": "FAILED tests/test_backend_matrix.py::TestMockBackend::test_contract_deployment_yields_no_address"
     },
     {
@@ -34,7 +34,7 @@
       "kind": "python",
       "description": "回执成交价永远报 1 wei",
       "killed": true,
-      "seconds": 3.33,
+      "seconds": 3.87,
       "hitting_test": "FAILED tests/test_chain_regression.py::TestNativeTransfer::test_sender_is_charged_value_plus_gas"
     },
     {
@@ -42,7 +42,7 @@
       "kind": "python",
       "description": "EIP-1559 交易被标成 0x0",
       "killed": true,
-      "seconds": 12.29,
+      "seconds": 15.09,
       "hitting_test": "FAILED tests/test_mutation_hardening.py::TestReceiptContract::test_receipt_type_is_present_on_the_receipt"
     },
     {
@@ -50,7 +50,7 @@
       "kind": "python",
       "description": "只读调用也产块",
       "killed": true,
-      "seconds": 3.67,
+      "seconds": 4.12,
       "hitting_test": "FAILED tests/test_chain_regression.py::TestContract::test_contract_call_does_not_mine_a_block"
     },
     {
@@ -58,7 +58,7 @@
       "kind": "python",
       "description": "快照回滚变成空操作",
       "killed": true,
-      "seconds": 3.04,
+      "seconds": 3.66,
       "hitting_test": "FAILED tests/test_api_surface.py::TestChainLifecycle::test_disable_then_enable_auto_mine"
     },
     {
@@ -66,7 +66,7 @@
       "kind": "python",
       "description": "永远说合约没字节码",
       "killed": true,
-      "seconds": 3.5,
+      "seconds": 4.29,
       "hitting_test": "FAILED tests/test_chain_regression.py::TestContract::test_deployed_code_is_stored_on_chain"
     },
     {
@@ -74,7 +74,7 @@
       "kind": "python",
       "description": "nonce 永远返回 0",
       "killed": true,
-      "seconds": 2.79,
+      "seconds": 3.47,
       "hitting_test": "FAILED tests/test_api_surface.py::TestQueryApi::test_get_nonce_increments_after_transaction"
     },
     {
@@ -82,7 +82,7 @@
       "kind": "python",
       "description": "事件日志全丢",
       "killed": true,
-      "seconds": 2.98,
+      "seconds": 3.47,
       "hitting_test": "FAILED tests/test_api_surface.py::TestQueryApi::test_get_logs_filters_by_address"
     },
     {
@@ -90,7 +90,7 @@
       "kind": "python",
       "description": "gas 估算翻倍",
       "killed": true,
-      "seconds": 3.59,
+      "seconds": 4.21,
       "hitting_test": "FAILED tests/test_chain_regression.py::TestTransactionReceipt::test_gas_estimate_for_plain_transfer_is_21000"
     },
     {
@@ -98,7 +98,7 @@
       "kind": "python",
       "description": "要求挖 N 块实际只挖 1 块",
       "killed": true,
-      "seconds": 3.21,
+      "seconds": 3.72,
       "hitting_test": "FAILED tests/test_backend_matrix.py::TestAutoMineDisabled::test_mine_blocks_applies_pending_and_advances"
     },
     {
@@ -106,7 +106,7 @@
       "kind": "python",
       "description": "禁止转给零地址",
       "killed": true,
-      "seconds": 3.37,
+      "seconds": 4.0,
       "hitting_test": "FAILED tests/test_chain_regression.py::TestNativeTransfer::test_transfer_to_zero_address_is_allowed_by_the_evm"
     },
     {
@@ -114,7 +114,7 @@
       "kind": "python",
       "description": "storage 永远读 slot 0",
       "killed": true,
-      "seconds": 2.9,
+      "seconds": 3.33,
       "hitting_test": "FAILED tests/test_api_surface.py::TestQueryApi::test_get_storage_at_requires_hex_slot"
     },
     {
@@ -122,7 +122,7 @@
       "kind": "python",
       "description": "费率历史永远只返 1 条",
       "killed": true,
-      "seconds": 12.2,
+      "seconds": 13.96,
       "hitting_test": "FAILED tests/test_mutation_hardening.py::TestFeeHistoryWindow::test_fee_history_returns_requested_window_size"
     },
     {
@@ -130,7 +130,7 @@
       "kind": "contract",
       "description": "合约变异体：transferFrom 不递减 allowance",
       "killed": true,
-      "seconds": 5.46,
+      "seconds": 6.4,
       "hitting_test": "FAILED tests/test_erc20.py::TestApproval::test_transfer_from_consumes_allowance"
     },
     {
@@ -138,7 +138,7 @@
       "kind": "contract",
       "description": "合约变异体：transfer 跳过余额检查（unchecked 下溢回绕）",
       "killed": true,
-      "seconds": 5.24,
+      "seconds": 6.15,
       "hitting_test": "FAILED tests/test_erc20.py::TestTransfer::test_transfer_more_than_balance_reverts_with_custom_error"
     }
   ]
